@@ -1,0 +1,14 @@
+mixin icon(name,mod)
+  - mod = mod || ''
+  svg(class="icon icon-" + name + ' ' + mod)
+    use(xlink:href="static/img/sprite/symbol/sprite.svg#" + name)
+
+
+mixin review(name,photo,text,mod)
+  .review(class=mod)
+    .author
+      .author__photo(style=`background-image:url('static/img/common/image-${photo}.jpg')`)
+      .author__info
+        span.name=name
+        span.work Verified Buyer
+    p=text
